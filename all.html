@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    All
+{% endblock %}
+
+{% block main %}
+    <p class="text3">
+        This is a list of all the CS courses most relevant to undergraduates who have completed CS50.
+        <br>
+        Our course listings are based on the most recent data from Harvard.
+        <br>
+        Click on a course to find out more.
+    </p>
+    <table class="table table-hover">
+        <thead style="background-color: #A51C30; color:white;">
+            <tr>
+                <th>Course ID</th>
+                <th>Course Title</th>
+                <th>Name</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody class="thead-light">
+            {% for row in rows %}
+            <tr onclick="window.location='{{row['Link']}}'";>
+                <td> {{row['ID']}} </td>
+                <td> {{row['Title']}} </td>
+                <td> {{row['Name']}} </td>
+                <td> {{row['Instructor']}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

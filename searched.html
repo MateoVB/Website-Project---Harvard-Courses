@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Searched
+{% endblock %}
+
+{% block main %}
+<table class="table table-bordered table-hover">
+        <thead style="background-color: #A51C30; color:white;">
+            <tr>
+                <th>Course ID</th>
+                <th>Title</th>
+                <th>Name</th>
+                <th>Instructor</th>
+                <th>Workload per Week (Hours)</th>
+                <th>Course Score (/5)</th>
+                <th>Instructor<br>Score (/5)</th>
+                <th>Recommend (/5)</th>
+            </tr>
+        </thead>
+        <tbody class="thead-light">
+            {% for row in rows %}
+            <tr onclick="window.location='{{row['Link']}}'";>
+                <td> {{row['ID']}} </td>
+                <td> {{row['Title']}} </td>
+                <td> {{row['Name']}} </td>
+                <td> {{row['Instructor']}} </td>
+                <td> {{row['Workload']}} </td>
+                <td> {{row['CScore']}} </td>
+                <td> {{row['IScore']}} </td>
+                <td> {{row['Recommend']}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1>
+        <br><br><br>
+    </h1>
+{% endblock %}

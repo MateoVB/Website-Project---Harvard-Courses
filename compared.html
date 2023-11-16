@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Compared
+{% endblock %}
+
+{% block main %}
+<p class="text3">
+        Here are the two courses compared.
+        <br> If you have more inquiries on each course, click on the relevant row in the table.
+</p>
+<table class="table table-bordered table-hover">
+        <thead style="background-color: #A51C30; color:white;">
+            <tr>
+                <th>Course ID</th>
+                <th>Title</th>
+                <th>Name</th>
+                <th>Instructor</th>
+                <th>No. of Students</th>
+                <th>Proportion of<br>Undergrads</th>
+                <th>Workload per Week (Hours)</th>
+                <th>Course Score (/5)</th>
+                <th>Instructor<br>Score (/5)</th>
+                <th>Recommend (/5)</th>
+            </tr>
+        </thead>
+        <tbody class="thead-light">
+            {% for x in course1info %}
+            {% if x.ID == course1 %}
+            <tr onclick="window.location='{{ x.Link }}'";>
+                <td> {{ x.ID }} </td>
+                <td> {{ x.Title }} </td>
+                <td> {{ x.Name }} </td>
+                <td> {{ x.Instructor }} </td>
+                <td> {{ x.Size }} </td>
+                <td> {{ x.Ugrad }}</td>
+                <td> {{ x.Workload }}</td>
+                <td> {{ x.CScore }}</td>
+                <td> {{ x.IScore }}</td>
+                <td> {{ x.Recommend }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            {% for x in course2info %}
+            {% if x.ID == course2 %}
+            <tr onclick="window.location='{{ x.Link }}'";>
+                <td> {{ x.ID }} </td>
+                <td> {{ x.Title }} </td>
+                <td> {{ x.Name }} </td>
+                <td> {{ x.Instructor }} </td>
+                <td> {{ x.Size }} </td>
+                <td> {{ x.Ugrad }}</td>
+                <td> {{ x.Workload }}</td>
+                <td> {{ x.CScore }}</td>
+                <td> {{ x.IScore }}</td>
+                <td> {{ x.Recommend }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1>
+        <br><br><br>
+    </h1>
+{% endblock %}

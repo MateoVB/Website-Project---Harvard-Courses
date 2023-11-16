@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <h1 class = "homepagetitle">
+        Sorry!
+    </h1>
+    <img src = "/static/puppy.jpg" alt="Picture of Mateo" height="250" width="165" class="rounded mx-auto d-block">
+    {% if num == 1 %}
+        <p class = "text3">
+            <br>
+            Please enter an ID for First Course ID.
+        </p>
+    {% endif %}
+    {% if num == 2 %}
+        <p class = "text3">
+            <br>
+            Please enter an ID for Second Course ID.
+        </p>
+    {% endif %}
+    {% if num == 3 %}
+        <p class = "text3">
+            <br>
+            Invalid ID found for First Course.
+        </p>
+    {% endif %}
+    {% if num == 4 %}
+        <p class = "text3">
+            <br>
+             Invalid ID found for Second Course.
+        </p>
+    {% endif %}
+    {% if num == 5 %}
+        <p class = "text3">
+            <br>
+             No courses were found.
+        </p>
+    {% endif %}
+    <br><br>
+{% endblock %}
